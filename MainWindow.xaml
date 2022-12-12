@@ -1,0 +1,86 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Практическая работа №12" Height="368" Width="618" ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Window.Resources>
+        <ResourceDictionary Source="./Темы/DefaultTheme.xaml"/>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard Storyboard="{DynamicResource GridAnimation1}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid Style="{DynamicResource GridSettings}" Background="{DynamicResource GradBrushGrid1}">
+        <Menu VerticalAlignment="Top" Style="{DynamicResource MenuSettings}" Height="19" Width="152" FontFamily="Arial">
+            <MenuItem Header="Файл" Style="{DynamicResource MenuItemSettings}" FontFamily="Arial">
+                <MenuItem Header="Выход" x:Name="CloseProg" Foreground="Black"/>
+            </MenuItem>
+            <MenuItem Header="Справка" Style="{DynamicResource MenuItemSettings}" FontFamily="Arial">
+                <MenuItem Header="Задание" x:Name="ShowTask" Foreground="Black" Click="ShowTask_Click"/>
+            </MenuItem>
+            <MenuItem Header="Темы" Style="{DynamicResource MenuItemSettings}" FontFamily="Arial">
+                <MenuItem Header="Стандартная тема" x:Name="DefaultTheme" Click="DefaultTheme_Click" Foreground="Black"/>
+                <MenuItem Header="Новая тема" x:Name="NewTheme" Click="NewTheme_Click" Foreground="Black"/>
+            </MenuItem>
+        </Menu>
+        <TabControl Style="{DynamicResource TabControlSettings}" Margin="0,19,0,22">
+            <TabItem Header="Задание 1" Style="{DynamicResource TabItemSettings}" Foreground="DarkGray" Background="{x:Null}" FontFamily="Arial">
+                <Grid>
+                    <GroupBox Style="{DynamicResource GroupBoxSettings}" Header="Исходные данные" Margin="0,0,0,170" BorderThickness="2" FontFamily="Arial">
+                        <GroupBox.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Контекстное меню для GroupBox сделан для вида"/>
+                            </ContextMenu>
+                        </GroupBox.ContextMenu>
+                        <Grid>
+                            <TextBox Style="{DynamicResource TextBoxSettings}" x:Name="UserValueS" TextChanged="UserValueS_TextChanged" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="0,38,0,0"/>
+                            <Label Content="Площадь круга (S)" HorizontalAlignment="Center" Margin="0,14,0,0" VerticalAlignment="Top" Style="{DynamicResource LabelSettings}" Width="120" FontFamily="Arial"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Style="{DynamicResource GroupBoxSettings}" Header="Результат данные" Margin="0,120,0,10" FontFamily="Arial">
+                        <GroupBox.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Контекстное меню для GroupBox сделан для вида"/>
+                            </ContextMenu>
+                        </GroupBox.ContextMenu>
+                        <Grid>
+                            <TextBox Style="{DynamicResource TextBoxSettings}" x:Name="ResD" HorizontalAlignment="Center" Margin="0,83,0,0" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Top" Width="126"/>
+                            <TextBox Style="{DynamicResource TextBoxSettings}" x:Name="ResL" HorizontalAlignment="Center" Margin="0,29,0,0" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Top" Width="126"/>
+                            <Label Style="{DynamicResource LabelSettings}" Content="Длина окружности(L)" HorizontalAlignment="Center" Margin="0,5,0,0" VerticalAlignment="Top" Width="140" FontFamily="Arial"/>
+                            <Label Style="{DynamicResource ResourceKey=LabelSettings}" Content="Диаметр окружности(D)" HorizontalAlignment="Center" Margin="0,59,0,0" VerticalAlignment="Top" Width="163" FontFamily="Arial"/>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Задание 2" Style="{DynamicResource TabItemSettings}" Foreground="DarkGray" FontFamily="Arial">
+                <Grid Style="{DynamicResource GridSettings}">
+                    <GroupBox Header="Исходные данные" Margin="0,0,0,152" Style="{DynamicResource GroupBoxSettings}" FontFamily="Arial">
+                        <Grid>
+                            <TextBox Style="{DynamicResource TextBoxSettings}" TextChanged="SecondsValues_TextChanged" x:Name="SecondsValues" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
+                            <Label Style="{DynamicResource LabelSettings}"  Content="Кол-во секунд" HorizontalAlignment="Center" Margin="0,16,0,0" VerticalAlignment="Top" Width="126" FontFamily="Arial"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Результат" Margin="0,143,0,10" Style="{DynamicResource GroupBoxSettings}" FontFamily="Arial">
+                        <Grid>
+                            <TextBox Style="{DynamicResource TextBoxSettings}" x:Name="FullHours" HorizontalAlignment="Center" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="0,56,0,0"/>
+                            <Label Style="{DynamicResource LabelSettings}"  Content="Кол-во полных часов" HorizontalAlignment="Center" Margin="0,27,0,0" VerticalAlignment="Top" Width="154" FontFamily="Arial"/>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <StatusBar VerticalAlignment="Bottom" Style="{DynamicResource StatusBarSettings}">
+            <TextBlock Text="Практическая работа №12"/>
+            <Separator/>
+            <TextBlock Text="Время:"/>
+            <TextBlock Text="" x:Name="TimeNow"/>
+            <Separator/>
+            <TextBlock Text="Дата:"/>
+            <TextBlock Text="" x:Name="DayNow"/>
+        </StatusBar>
+    </Grid>
+</Window>

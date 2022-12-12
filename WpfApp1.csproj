@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Спецификация модуля\**" />
+    <EmbeddedResource Remove="Спецификация модуля\**" />
+    <None Remove="Спецификация модуля\**" />
+    <Page Remove="Спецификация модуля\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="folder.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="folder.png" />
+  </ItemGroup>
+
+</Project>

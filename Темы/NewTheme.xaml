@@ -1,0 +1,70 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="MenuSettings">
+        <Setter Property="Menu.Background" Value="Transparent"/>
+        <Setter Property="Menu.HorizontalAlignment" Value="Center"/>
+        <Setter Property="Menu.Foreground" Value="White"/>
+    </Style>
+
+    <Style x:Key="MenuItemSettings">
+        <Setter Property="MenuItem.FontFamily" Value="Times New Roman"/>
+    </Style>
+
+    <Style x:Key="TabItemSettings">
+        <Setter Property="TabItem.Foreground" Value="Black"/>
+        <Setter Property="TabItem.Background" Value="Transparent"/>
+        <Setter Property="TabItem.BorderBrush" Value="Transparent"/>
+    </Style>
+    <Style x:Key="StatusBarSettings">
+        <Setter Property="StatusBar.Background" Value="Transparent"/>
+        <Setter Property="StatusBar.Foreground" Value="White"/>
+    </Style>
+    <Style x:Key="TabControlSettings">
+        <Setter Property="TabControl.FontFamily" Value="Times New Roman"/>
+        <Setter Property="TabControl.Background" Value="Transparent"/>
+        <Setter Property="TabControl.Foreground" Value="Transparent"/>
+        <Setter Property="TabControl.BorderBrush" Value="Transparent"/>
+    </Style>
+
+    <Style x:Key="GroupBoxSettings">
+        <Setter Property="GroupBox.FontFamily" Value="Times New Roman"/>
+        <Setter Property="GroupBox.Foreground" Value="White"/>
+    </Style>
+
+    <Style x:Key="LabelSettings">
+        <Setter Property="Label.HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Label.FontFamily" Value="Times New Roman"/>
+        <Setter Property="Label.Foreground" Value="White"/>
+    </Style>
+    <Style x:Key="TextBoxSettings">
+        <Setter Property="TextBox.Background" Value="Transparent"/>
+        <Setter Property="TextBox.Foreground" Value="White"/>
+    </Style>
+    <Style x:Key="GridSettings">
+        <Setter Property="Grid.Background" Value="Transparent"/>
+    </Style>
+    
+    <LinearGradientBrush x:Key="GradBrushGrid1">
+        <GradientStop x:Name="GradientStop17" Offset="0.5" Color="MediumPurple" />
+        <GradientStop x:Name="GradientStop18" Offset="1" Color="HotPink" />
+    </LinearGradientBrush>
+
+    <Storyboard x:Key="GridAnimation1">
+        <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="{Binding ElementName=GradientStop17}"
+                                Storyboard.TargetProperty="Background.Color"
+                                From="MediumPurple"
+                                To="HotPink"
+                                Duration="0:0:2" />
+        <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="{Binding ElementName=GradientStop18}"
+                                Storyboard.TargetProperty="Background.Color"
+                                From="HotPink"
+                                To="MediumPurple"
+                                Duration="0:0:2" />
+    </Storyboard>
+</ResourceDictionary>
